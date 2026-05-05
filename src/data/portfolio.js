@@ -12,7 +12,7 @@ export const experience = [
   {
     id: 1,
     company: "rotutiA",
-    role: "Back End & DevOps Engineer",
+    role: "Backend & DevOps Engineer",
     type: "Full-time",
     period: "Jul 2025 – Present",
     location: "On-site",
@@ -80,7 +80,7 @@ export const experience = [
       },
       {
         name: "Wecari",
-        logo: "/img/moov_transparent_logo.webp",
+        logo: "/img/moov_bird_icon.webp",
         description:
           "Peer-to-Peer Kilo Sharing platform with .NET API, comprehensive database design, AWS infrastructure with EC2 and Route53, Docker containerization, and CI/CD pipelines.",
         tags: [".NET", "AWS", "Docker", "CI/CD", "Route53"],
@@ -135,7 +135,7 @@ export const experience = [
   {
     id: 4,
     company: "ABC Content Solutions Co., Ltd.",
-    role: "Back End Developer",
+    role: "Backend Developer",
     type: "Full-time",
     period: "Jan 2023 – Dec 2023",
     location: "Yangon, Myanmar",

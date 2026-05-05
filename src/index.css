@@ -7,21 +7,21 @@
 }
 
 :root {
-  --color-bg:           #0b0b14;
-  --color-bg-alt:       #0f0f1d;
-  --color-surface:      #141426;
-  --color-surface-2:    #1a1a30;
-  --color-border:       #25254a;
-  --color-border-hi:    #363665;
-  --color-text:         #94a3b8;
-  --color-text-muted:   #4a5570;
-  --color-heading:      #e2e8f0;
-  --color-accent:       #a78bfa;
-  --color-accent-dim:   rgba(167, 139, 250, 0.09);
-  --color-accent-glow:  rgba(167, 139, 250, 0.22);
-  --color-accent-hover: #c4b5fd;
-  --color-green:        #34d399;
-  --color-green-dim:    rgba(52, 211, 153, 0.09);
+  --color-bg:           #ffffff;
+  --color-bg-alt:       #f9fafb;
+  --color-surface:      #ffffff;
+  --color-surface-2:    #f3f4f6;
+  --color-border:       #e5e7eb;
+  --color-border-hi:    #d1d5db;
+  --color-text:         #374151;
+  --color-text-muted:   #6b7280;
+  --color-heading:      #111827;
+  --color-accent:       #998ee0;
+  --color-accent-dim:   rgba(153, 142, 224, 0.09);
+  --color-accent-glow:  rgba(153, 142, 224, 0.2);
+  --color-accent-hover: #7d70cc;
+  --color-green:        #16a34a;
+  --color-green-dim:    rgba(22, 163, 74, 0.08);
   --font-mono:          'JetBrains Mono', 'Fira Code', monospace;
 
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -52,6 +52,6 @@ ul { list-style: none; }
 ::selection { background: var(--color-accent-dim); color: var(--color-accent); }
 
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--color-bg); }
-::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-border-hi); }
+::-webkit-scrollbar-track { background: var(--color-bg-alt); }
+::-webkit-scrollbar-thumb { background: var(--color-border-hi); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
