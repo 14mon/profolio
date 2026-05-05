@@ -752,56 +752,162 @@
 /* ═══════════════════════════════════════════
    SKILLS
 ═══════════════════════════════════════════ */
+.skills__stats {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-mono);
+}
+
+.skills__stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.skills__stat-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: -0.04em;
+}
+
+.skills__stat-label {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.skills__stat-sep {
+  color: var(--color-border-hi);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
 }
 
 .skills__group {
+  --card-rgb: 153, 142, 224;
+  position: relative;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 1.25rem 1.5rem;
-  transition: border-color 0.2s;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem 1.5rem;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+  overflow: hidden;
 }
 
-.skills__group:hover { border-color: var(--color-border-hi); }
+.skills__group::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: rgb(var(--card-rgb));
+  border-radius: 12px 12px 0 0;
+  opacity: 0.45;
+  transition: opacity 0.25s;
+}
+
+.skills__group::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at top, rgba(var(--card-rgb), 0.05) 0%, transparent 65%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.skills__group:hover {
+  border-color: rgba(var(--card-rgb), 0.35);
+  box-shadow: 0 8px 28px rgba(var(--card-rgb), 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.skills__group:hover::before { opacity: 1; }
+.skills__group:hover::after  { opacity: 1; }
+
+.skills__category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.875rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1;
+}
+
+.skills__icon {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgb(var(--card-rgb));
+  background: rgba(var(--card-rgb), 0.1);
+  border: 1px solid rgba(var(--card-rgb), 0.22);
+  border-radius: 5px;
+  padding: 0.22rem 0.5rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
 
 .skills__category {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--color-accent);
-  margin-bottom: 0.875rem;
-  padding-bottom: 0.625rem;
-  border-bottom: 1px solid var(--color-border);
-  opacity: 0.9;
+  letter-spacing: 0.16em;
+  color: var(--color-text-muted);
+  flex: 1;
+}
+
+.skills__count {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: rgb(var(--card-rgb));
+  background: rgba(var(--card-rgb), 0.1);
+  border: 1px solid rgba(var(--card-rgb), 0.22);
+  border-radius: 20px;
+  padding: 0.15rem 0.55rem;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
 }
 
 .skills__items {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .skill-badge {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  padding: 0.3rem 0.7rem;
+  padding: 0.3rem 0.75rem;
   background: var(--color-bg-alt);
   color: var(--color-text);
   border: 1px solid var(--color-border);
-  border-radius: 4px;
-  transition: color 0.15s, border-color 0.15s;
+  border-radius: 20px;
+  transition: color 0.18s, border-color 0.18s, background 0.18s, box-shadow 0.18s;
+  cursor: default;
 }
 
 .skill-badge:hover {
-  color: var(--color-heading);
-  border-color: var(--color-border-hi);
+  color: rgb(var(--card-rgb));
+  border-color: rgba(var(--card-rgb), 0.4);
+  background: rgba(var(--card-rgb), 0.06);
+  box-shadow: 0 0 10px rgba(var(--card-rgb), 0.15);
 }
 
 /* ═══════════════════════════════════════════
